@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <style>
+        *
+        {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+
+    <script>
+        var total = 0, final;
+        $(document).ready(function(){
+            $("#but").click(function(){
+                $("#q11").slideDown(1000);
+            });
+        });
+
+
+        
+
+        function tot(event)
+        {
+            total = 0;
+            var q1=document.quiz.question1.value;
+            var q2=document.quiz.question2.value;
+            var q3=document.quiz.question3.value;
+            var final = document.getElementById("q11")
+            if(q1=='a')
+            {
+                total++;
+            }
+            if(q2=='a')
+            {
+                total++;
+            }
+            if(q3=='a')
+            {
+                total++;
+            }
+
+            console.log(total);
+            if(total>=2)
+            alert("Your score is " +total);
+            else
+                alert("Sorry");
+            event.preventDefault();
+            document.getElementById("q11").style.display = "none";
+        }
+        console.log(total);
+        function check()
+        {
+            console.log(total)
+            if (total >= 2)
+                window.open("http://localhost:5000/c2");
+            else
+                alert("Not qualified for next round")
+        }
+
+
+
+    </script>
+
+
+</head>
+<body>
+
+    <body>
+        <div style="background-color: palegreen; opacity: 0.8; width: 100%; height: 100px;">
+        <h1 style="text-align: center; font-family: 'Ultra', serif; font-size: 40px; padding-top: 30px;"><b>Welcome To First Round</b></h1>
+        </div>
+        <p style="font-size: 20px; margin-top: 20px; margin-left: 50px;"><b>Please read the instructions carefully.</b><br><br>
+            <ol>
+                <li style="margin-left: 50px; font-size: 18px;">This set consists of 3 questions.</li><br>
+                <li style="margin-left: 50px; font-size: 18px;">Each question consists of 1 marks.</li><br>
+                <li style="margin-left: 50px; font-size: 18px;">No negative marking for wrong answers.</li>
+            </ol>
+        </p>
+        <button id="but" style="font-size: 20px; padding: 10px; margin-left: 40px; margin-top: 20px; float: left; display: inline;">Start Quiz</button>
+        <!-- <a style="text-decoration: none;" href="http://127.0.0.1:5500/Quiz2.html?question1=a&question2=b&question3=c"> -->
+            <button id="new" style="margin-left: 200px; margin-top: 20px; text-decoration: none; font-size: 18px; padding: 10px; display: inline;" onclick="check()">Next</button></a>
+    
+
+        <div id="q11" hidden style="background-color: rgb(216, 112, 112); width: 60%;height: 1280px; margin-top: 20px; margin-left: 300px;">
+
+
+        <form name="quiz">
+
+            <div>
+                <p style="margin-top: 50px; padding: 40px; margin-left: 50px; font-size: 22px;"><b>1. Who is Mithali raj?</b></p>
+                <p style="padding: 20px; font-size: 22px; margin-left: 50px;"><input type="radio" name="question1" value="a" id="a11"> Indian cricketer</p>
+                <p style="padding: 20px; font-size: 22px; margin-left: 50px;"><input type="radio" name="question1" value="b" id="a12"> Indian Footballer</p>
+                <p style="padding: 20px; font-size: 22px; margin-left: 50px;"><input type="radio" name="question1" value="c" id="a13"> Boxer</p>
+                <p style="padding: 20px; font-size: 22px; margin-left: 50px;"><input type="radio" name="question1" value="d" id="a14"> Swimmer</p>
+            </div>
+
+
+            <div>
+                <p style="margin-top: 50px; padding: 40px; margin-left: 50px; font-size: 22px;"><b>2. What is the full form of HTML?</b></p>
+                <p style="padding: 20px; font-size: 22px; margin-left: 50px;"><input type="radio" name="question2" value="a" id="a21"> Hypertext-Markup Language</p>
+                <p style="padding: 20px; font-size: 22px; margin-left: 50px;"><input type="radio" name="question2" value="b" id="a22"> Hyperextension-Markup Language</p>
+                <p style="padding: 20px; font-size: 22px; margin-left: 50px;"><input type="radio" name="question2" value="c" id="a23"> Hypothetical-Markup Language</p>
+                <p style="padding: 20px; font-size: 22px; margin-left: 50px;"><input type="radio" name="question2" value="d" id="a24"> Hypertension-Markup Language</p>
+            </div>
+
+
+            <div>
+                <p style="margin-top: 50px; padding: 40px; margin-left: 50px; font-size: 22px;"><b>3. who is Narendra Modi ?</b></p>
+                <p style="padding: 20px; font-size: 22px; margin-left: 50px;"><input type="radio" name="question3" value="a" id="a31"> Prime Minister</p>
+                <p style="padding: 20px; font-size: 22px; margin-left: 50px;"><input type="radio" name="question3" value="b" id="a32"> CM</p>
+                <p style="padding: 20px; font-size: 22px; margin-left: 50px;"><input type="radio" name="question3" value="c" id="a33"> IAS/p>
+                <p style="padding: 20px; font-size: 22px; margin-left: 50px;"><input type="radio" name="question3" value="d" id="a34"> ASP</p>
+            </div>
+
+
+            <button id="result" style="margin-left: 200px; margin-top: 20px; font-size: 18px; padding: 10px; display: inline;" onclick="tot(event)">Submit</button>
+
+
+        </form>
+
+        <!-- <button id="new" style="margin-left: 200px; margin-top: 20px; font-size: 18px; padding: 10px; display: inline;" onclick="next()">Next</button> -->
+
+        </div>
+
+        <!-- <a href="">
+
+        <button id="new" style="margin-left: 200px; margin-top: 20px; font-size: 18px; padding: 10px; display: inline;" onclick="next()">Next</button></a> -->
+
+    
+    
+</body>
+</html>

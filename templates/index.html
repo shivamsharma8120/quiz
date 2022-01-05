@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .nav{
+            height: 50px;
+            width: 100%;
+            background-color:rgb(54, 6, 100);
+        }
+        h1{
+            position: absolute;
+            color:white;
+        }
+        ul{
+            margin-left: 60%;
+        }
+        li{
+            padding: 20px;
+            display: inline;
+        }
+        *{
+            margin: 0px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <h1>ABC</h1>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="/signin">Signin</a></li>
+            <li><a href="/login">{{data}}</a></li>
+        </ul>
+    </div>
+
+    <h2><a href="/quiz" style="background-color: black;">{{x}}</a></h2>
+</body>
+</html>
